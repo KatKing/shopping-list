@@ -130,6 +130,27 @@ input:focus {
 	text-decoration: line-through;
 }
 
+.clear-btn {
+	text-align: center!important;
+	background-color: #fff;
+	width: 100px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.clear-btn:hover {
+	color: #fff;
+	background-color: gray;
+}
+
+
+#clear {
+	text-decoration: none;
+	color: #000;
+	text-transform: uppercase;
+	font-family: "Oswald", sans-serif;
+}
+
 
 
 
