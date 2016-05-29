@@ -6,14 +6,7 @@ $(document).ready(function(){
 		$(this).parent().toggleClass("check");
 	});
 
-	$(".items").on("click", ".trash", function(event){
-		$(this).parent().fadeOut(800, function(){
-			$(this).remove();
-			event.stopPropagation();
-			getItems();
-		});
-		
-	});
+
 
 	$("input[type='text'").keypress(function(event){
 		if(event.which === 13){
@@ -35,11 +28,21 @@ $(document).ready(function(){
 			$(".items").html(localStorage.getItem('shoppingItems'))
 		}
 
-		$("#clear").click(function(){
+		$("#clear").on("click", function(){
+			$("li").remove();
 			window.localStorage.clear();
-			location.reload();
+			
 			
 		});
+		$(".items").on("click", ".trash", function(event){
+		$(this).parent().fadeOut(800, function(){
+			$(this).remove();
+			window.localStorage.removeItem(this);
+			event.stopPropagation();
+			
+		});
+		
+	});
 
 });
 	
